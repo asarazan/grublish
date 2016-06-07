@@ -18,13 +18,8 @@ bintray.apikey={your_bintray_api_key} // you can find this at https://bintray.co
 // compile 'com.levelmoney:klarity:0.2'
 
 publish.group = com.levelmoney
-
-// THIS ABSOLUTELY MUST MATCH YOUR ANDROID STUDIO MODULE NAME BECAUSE OF REASONS. 
-// WE APOLOGIZE FOR THIS.
 publish.artifact = klarity
-
 publish.version = 0.2
-
 // publish.org = levelmoney // org is only needed if you're pushing to a team.
 ```
 
