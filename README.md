@@ -1,6 +1,9 @@
 # grublish
 Absolutely minimal Bintray publishing via Gradle.
 
+## Introduction
+We have done our best to create a path to library publishing with the minimal possible amount of boilerplate. This was accomplished by hiding the ugliness of maven archiving, and replacing some of the more advanced settings with sensible defaults. It also assumes that you will enter metadata like _license_ and _description_ using the UI at https://bintray.com
+
 #### local.properties (or ~/.gradle/gradle.properties)
 ```gradle
 bintray.user={your_bintray_username}
