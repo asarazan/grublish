@@ -19,3 +19,12 @@ buildscript {
 ```gradle
 apply from: 'https://raw.githubusercontent.com/Levelmoney/grublish/master/gradle/module.gradle'
 ```
+
+#### gradle.properties
+```properties
+// publish.org = levelmoney // org is only needed if you're pushing to a team.
+publish.group = com.levelmoney
+publish.artifact = klarity
+publish.version = 0.2
+```
+I've used [Klarity](https://github.com/Levelmoney/klarity) as an example. A user of your library would then import it as `compile 'com.levelmoney:klarity:0.2'`
