@@ -29,7 +29,7 @@ publish.version = 0.2
 // publish.org = levelmoney // org is only needed if you're pushing to a team.
 ```
 
-#### local.properties or ~/.gradle/gradle.properties
+#### local.properties (or ~/.gradle/gradle.properties)
 ```gradle
 bintray.user=<your_bintray_username>
 bintray.apikey=<your_bintray_api_key> // you can find this at https://bintray.com/profile/edit
