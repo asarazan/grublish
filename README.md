@@ -1,4 +1,4 @@
-# grublishing
+# grublish
 Absolutely minimal Bintray publishing via Gradle.
 
 ### Usage
