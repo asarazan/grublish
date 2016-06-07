@@ -1,0 +1,60 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+ext.propertyOrEnv = { key -> project.hasProperty(key) ? project.getProperty(key) : System.getenv(key) }
+
+group = project.getProperty('publish.group')
+version = project.getProperty('publish.version')
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    excludes = ['**/*.kt'] // because kotlin ain't java.
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                groupId project.getProperty('publish.group')
+                artifactId project.getProperty('publish.artifact')
+            }
+        }
+    }
+}
+
+bintray {
+    user = propertyOrEnv('bintray.user')
+    key = propertyOrEnv('bintray.apikey')
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = project.getProperty('publish.artifact')
+        if (project.hasProperty('publish.org')) {
+            userOrg = project.getProperty('publish.org')
+        }
+        if (project.hasProperty('publish.vcs')) {
+            vcsUrl = project.getProperty('publish.vcs')
+        }
+        if (project.hasProperty('publish.license')) {
+            licenses = [project.getProperty('publish.license')]
+        }
+    }
+}
