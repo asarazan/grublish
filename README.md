@@ -3,8 +3,8 @@ Absolutely minimal Bintray publishing via Gradle.
 
 #### local.properties (or ~/.gradle/gradle.properties)
 ```gradle
-bintray.user=<your_bintray_username>
-bintray.apikey=<your_bintray_api_key> // you can find this at https://bintray.com/profile/edit
+bintray.user={your_bintray_username}
+bintray.apikey={your_bintray_api_key} // you can find this at https://bintray.com/profile/edit
 ```
 
 #### gradle.properties
