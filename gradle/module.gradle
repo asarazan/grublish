@@ -41,8 +41,8 @@ install {
 }
 
 bintray {
-    user = propertyOrEnv('bintray.user')
-    key = propertyOrEnv('bintray.apikey')
+    user = propertyOrEnv('grublish.user')
+    key = propertyOrEnv('grublish.apikey')
     configurations = ['archives']
     pkg {
         repo = 'maven'
