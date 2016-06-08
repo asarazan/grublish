@@ -11,7 +11,9 @@ We're not there yet, but we have done our best to create an easy path to publish
 #### local.properties (or ~/.gradle/gradle.properties)
 ```gradle
 grublish.user={your_bintray_username}
-grublish.apikey={your_bintray_api_key} # you can find this at https://bintray.com/profile/edit
+
+# you can find this at https://bintray.com/profile/edit
+grublish.apikey={your_bintray_api_key} 
 ```
 
 #### gradle.properties
