@@ -9,7 +9,7 @@ We're not there yet, but we have done our best to create an easy path to publish
 4. Gather yourself and then check out the [Sample Project](https://github.com/Levelmoney/grublish/tree/master/grublish-sample).
 
 #### local.properties (or ~/.gradle/gradle.properties)
-```gradle
+```bash
 grublish.user={your_bintray_username}
 
 # you can find this at https://bintray.com/profile/edit
@@ -17,7 +17,7 @@ grublish.apikey={your_bintray_api_key}
 ```
 
 #### gradle.properties
-```gradle
+```bash
 # the following example would be imported as:
 # compile 'com.levelmoney:klarity:0.2'
 
