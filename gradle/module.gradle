@@ -3,8 +3,8 @@ apply plugin: 'com.jfrog.bintray'
 
 ext.propertyOrEnv = { key -> project.hasProperty(key) ? project.getProperty(key) : System.getenv(key) }
 
-group = project.getProperty('publish.group')
-version = project.getProperty('publish.version')
+group = project.getProperty('grublish.group')
+version = project.getProperty('grublish.version')
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
@@ -33,8 +33,8 @@ install {
         pom {
             project {
                 packaging 'aar'
-                groupId project.getProperty('publish.group')
-                artifactId project.getProperty('publish.artifact')
+                groupId project.getProperty('grublish.group')
+                artifactId project.getProperty('grublish.artifact')
             }
         }
     }
@@ -46,15 +46,15 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = 'maven'
-        name = project.getProperty('publish.artifact')
-        if (project.hasProperty('publish.org')) {
-            userOrg = project.getProperty('publish.org')
+        name = project.getProperty('grublish.artifact')
+        if (project.hasProperty('grublish.org')) {
+            userOrg = project.getProperty('grublish.org')
         }
-        if (project.hasProperty('publish.vcs')) {
-            vcsUrl = project.getProperty('publish.vcs')
+        if (project.hasProperty('grublish.vcs')) {
+            vcsUrl = project.getProperty('grublish.vcs')
         }
-        if (project.hasProperty('publish.license')) {
-            licenses = [project.getProperty('publish.license')]
+        if (project.hasProperty('grublish.license')) {
+            licenses = [project.getProperty('grublish.license')]
         }
     }
 }
