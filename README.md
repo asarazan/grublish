@@ -7,7 +7,8 @@ We have done our best to create an easy path to publishing with minimal _esoteri
 ### Before you begin
 1. Sign up and create your package at https://bintray.com
 2. **Make sure** your library module in Android Studio matches the name of your artifact. You may have to rename your root project to do this.
-3. Cry a bit.
+3. Cry for a while.
+4. Gather yourself and then check out the [Sample Project](https://github.com/Levelmoney/grublish/tree/master/grublish-sample) a look.
 
 #### local.properties (or ~/.gradle/gradle.properties)
 ```gradle
