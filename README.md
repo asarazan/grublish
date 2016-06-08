@@ -5,24 +5,24 @@ We're not there yet, but we have done our best to create an easy path to publish
 ### Before you begin
 1. Sign up and create your package at https://bintray.com
 2. **Make sure** your library module in Android Studio matches the name of your artifact. This is critical.
-3. Cry for a while.
+3. Cry for a bit.
 4. Gather yourself and then check out the [Sample Project](https://github.com/Levelmoney/grublish/tree/master/grublish-sample).
 
 #### local.properties (or ~/.gradle/gradle.properties)
 ```gradle
-bintray.user={your_bintray_username}
-bintray.apikey={your_bintray_api_key} // you can find this at https://bintray.com/profile/edit
+grublish.user={your_bintray_username}
+grublish.apikey={your_bintray_api_key} # you can find this at https://bintray.com/profile/edit
 ```
 
 #### gradle.properties
 ```gradle
-// the following EXAMPLE would be imported as:
-// compile 'com.levelmoney:klarity:0.2'
+# the following example would be imported as:
+# compile 'com.levelmoney:klarity:0.2'
 
-publish.group = com.levelmoney
-publish.artifact = klarity
-publish.version = 0.2
-// publish.org = levelmoney // org is only needed if you're pushing to a team.
+grublish.group = com.levelmoney
+grublish.artifact = klarity
+grublish.version = 0.2
+# publish.org = levelmoney // org is only needed if you're pushing to a team.
 ```
 
 #### build.gradle
