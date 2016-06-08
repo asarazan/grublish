@@ -1,4 +1,6 @@
-We have done our best to create an easy path to publishing with minimal _esoterica_. We accomplished this by replacing some of the more advanced/redundant settings with sensible defaults, and hiding the ugliness of maven archiving. We also assume that you will enter metadata like _license_ and _description_ using the UI at https://bintray.com
+In an ideal world, publishing to bintray would be as easy as pulling from it.
+
+We're not there yet, but we have done our best to create an easy path to publishing with minimal _esoterica_. We accomplished this by replacing some of the more advanced/redundant settings with sensible defaults, and hiding the ugliness of maven archiving. We also assume that you will enter metadata like _license_ and _description_ using the UI at https://bintray.com
 
 ### Before you begin
 1. Sign up and create your package at https://bintray.com
