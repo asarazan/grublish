@@ -6,7 +6,7 @@ We're not there yet, but we have done our best to create an easy path to publish
 1. Sign up and create your package at https://bintray.com
 2. **Make sure** your library module in Android Studio matches the name of your artifact. This is critical.
 3. Cry for a while.
-4. Gather yourself and then check out the [Sample Project](https://github.com/Levelmoney/grublish/tree/master/grublish-sample) a look.
+4. Gather yourself and then check out the [Sample Project](https://github.com/Levelmoney/grublish/tree/master/grublish-sample).
 
 #### local.properties (or ~/.gradle/gradle.properties)
 ```gradle
