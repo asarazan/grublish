@@ -44,6 +44,9 @@ bintray {
     user = propertyOrEnv('grublish.user')
     key = propertyOrEnv('grublish.apikey')
     configurations = ['archives']
+    if (project.hasProperty('grublish.publish')) {
+        publish = project.getProperty('grublish.publish')
+    }
     pkg {
         repo = 'maven'
         name = project.getProperty('grublish.artifact')
