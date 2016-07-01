@@ -40,24 +40,27 @@ install {
     }
 }
 
-bintray {
-    user = propertyOrEnv('grublish.user')
-    key = propertyOrEnv('grublish.apikey')
-    configurations = ['archives']
-    if (project.hasProperty('grublish.publish')) {
-        publish = project.getProperty('grublish.publish')
-    }
-    pkg {
-        repo = 'maven'
-        name = project.getProperty('grublish.artifact')
-        if (project.hasProperty('grublish.org')) {
-            userOrg = project.getProperty('grublish.org')
+
+if (project.hasProperty('grublish.user')) {
+    bintray {
+        user = propertyOrEnv('grublish.user')
+        key = propertyOrEnv('grublish.apikey')
+        configurations = ['archives']
+        if (project.hasProperty('grublish.publish')) {
+            publish = project.getProperty('grublish.publish')
         }
-        if (project.hasProperty('grublish.vcs')) {
-            vcsUrl = project.getProperty('grublish.vcs')
-        }
-        if (project.hasProperty('grublish.license')) {
-            licenses = [project.getProperty('grublish.license')]
+        pkg {
+            repo = 'maven'
+            name = project.getProperty('grublish.artifact')
+            if (project.hasProperty('grublish.org')) {
+                userOrg = project.getProperty('grublish.org')
+            }
+            if (project.hasProperty('grublish.vcs')) {
+                vcsUrl = project.getProperty('grublish.vcs')
+            }
+            if (project.hasProperty('grublish.license')) {
+                licenses = [project.getProperty('grublish.license')]
+            }
         }
     }
 }
