@@ -24,7 +24,8 @@ grublish.apikey={your_bintray_api_key}
 grublish.group = com.levelmoney
 grublish.artifact = klarity
 grublish.version = 0.2
-# publish.org = levelmoney // org is only needed if you're pushing to a team.
+# grublish.publish = true // by default, you have to go to bintray and manually hit publish
+# grublish.org = levelmoney // org is only needed if you're pushing to a team.
 ```
 
 #### build.gradle
