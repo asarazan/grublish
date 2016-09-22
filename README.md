@@ -45,3 +45,6 @@ buildscript {
 ...
 apply from: 'https://raw.githubusercontent.com/Levelmoney/grublish/1.0/gradle/module.gradle'
 ```
+
+#### Finally!
+`./gradlew bintrayUpload`
