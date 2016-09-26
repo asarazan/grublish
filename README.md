@@ -47,4 +47,4 @@ apply from: 'https://raw.githubusercontent.com/Levelmoney/grublish/1.0.1/gradle/
 ```
 
 #### Finally!
-`./gradlew build bintrayUpload`
+`./gradlew build install bintrayUpload`
