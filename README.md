@@ -43,7 +43,7 @@ buildscript {
 #### {modulename}/build.gradle
 ```gradle
 ...
-apply from: 'https://raw.githubusercontent.com/Levelmoney/grublish/1.0/gradle/module.gradle'
+apply from: 'https://raw.githubusercontent.com/Levelmoney/grublish/1.0.1/gradle/module.gradle'
 ```
 
 #### Finally!
