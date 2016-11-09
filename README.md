@@ -34,7 +34,7 @@ buildscript {
   ...
   dependencies {
     ...
-    classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+    classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1' // Android ONLY
     classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
   }
 }
@@ -43,7 +43,9 @@ buildscript {
 #### {modulename}/build.gradle
 ```gradle
 ...
-apply from: 'https://raw.githubusercontent.com/Levelmoney/grublish/1.0.1/gradle/module.gradle'
+apply from: 'https://raw.githubusercontent.com/Levelmoney/grublish/1.0.2/gradle/module-android.gradle' // Android Project
+// OR
+apply from: 'https://raw.githubusercontent.com/Levelmoney/grublish/1.0.2/gradle/module-java.gradle' // Java Project
 ```
 
 #### Finally!
