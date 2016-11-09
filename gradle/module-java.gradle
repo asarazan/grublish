@@ -1,0 +1,56 @@
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+
+ext.propertyOrEnv = { key -> project.hasProperty(key) ? project.getProperty(key) : System.getenv(key) }
+
+group = project.getProperty('grublish.group')
+version = project.getProperty('grublish.version')
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+// add javadoc/source jar tasks as artifacts
+artifacts {
+    archives sourcesJar, javadocJar
+}
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+        }
+    }
+}
+
+bintray {
+    user = propertyOrEnv('grublish.user')
+    key = propertyOrEnv('grublish.apikey')
+    configurations = ['archives']
+    if (project.hasProperty('grublish.publish')) {
+        publish = project.getProperty('grublish.publish')
+    }
+    pkg {
+        repo = 'maven'
+        name = project.getProperty('grublish.artifact')
+        if (project.hasProperty('grublish.org')) {
+            userOrg = project.getProperty('grublish.org')
+        }
+        if (project.hasProperty('grublish.vcs')) {
+            vcsUrl = project.getProperty('grublish.vcs')
+        }
+        if (project.hasProperty('grublish.license')) {
+            licenses = [project.getProperty('grublish.license')]
+        }
+    }
+}
